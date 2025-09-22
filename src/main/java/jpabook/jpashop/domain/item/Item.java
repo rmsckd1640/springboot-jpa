@@ -46,6 +46,6 @@ public abstract class Item {//상속관계 매핑해야함
         if (restStock < 0) {
             throw new NotEnoughStockException("need more stock");
         }
-        this.stockQuantity -= restStock;
+        this.stockQuantity = restStock;
     }
 }
