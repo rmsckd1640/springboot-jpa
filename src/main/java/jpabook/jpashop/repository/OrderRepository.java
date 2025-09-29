@@ -28,8 +28,8 @@ public class OrderRepository {
 
     /*
     JPQL로 동적 쿼리 처리. 비추천
-
-    public List<Order> findAll(OrderSearch orderSearch) {
+    */
+    public List<Order> findAllByString(OrderSearch orderSearch) {
         //language=JPAQL
         String jpql = "select o From Order o join o.member m";
         boolean isFirstCondition = true;
@@ -67,7 +67,7 @@ public class OrderRepository {
 
         return query.getResultList();
     }
-    */
+
 
     /*
     JPA Criteria로 동적 쿼리 처리. 비추천

@@ -18,6 +18,12 @@ public class ItemRepository {
             em.persist(item);
         } else{
             em.merge(item);
+            /*
+            JPA는 준영속 객체의 식별자를 이용하여 1차 캐시에 이미 있는지 확인 (없다면 select 쿼리를 실행해 1차 캐시에 넣음)
+            이 과정을 통해 영속 상태의 원본 엔티티 확보
+            이 원본 엔티티(영속)에 그대로 덮어씀
+            이 영속 상태의 객체를 반환
+             */
         }
         /*
         merge()는 새로운 영속 상태의 엔티티를 반환합니다.
